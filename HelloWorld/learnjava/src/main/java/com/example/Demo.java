@@ -2,8 +2,25 @@ package com.example;
 
 public class Demo {
     public static void main(String[] args) {
-        Player tim = new Player("Timothy", 5);
-        System.out.println(tim.getHandleName());
-        System.out.println(tim.getWeapon().getName());
+        int[] elements = { 5, 7, 12, 100, -1, 8, 3 };
+        int indexPos = 0;
+        int sumTotal = 0;
+
+        while (indexPos < elements.length) {
+            System.out.println("Processing: " + indexPos + " Value: " + elements[indexPos]);
+            if (elements[indexPos] < 0) {
+                System.out.println("Break!");
+                break;
+            }
+            if (elements[indexPos] > 99) {
+                System.out.println("Continue!");
+                indexPos ++;
+                continue;
+            }
+            sumTotal += elements[indexPos];
+            indexPos ++;
+        }
+
+        System.out.println("Sum total was: " + sumTotal);
     }
 }
